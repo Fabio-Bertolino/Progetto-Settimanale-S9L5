@@ -1,8 +1,9 @@
 import { Container, Dropdown, DropdownButton } from "react-bootstrap";
 import { List, Grid } from "react-bootstrap-icons";
-import TrendingNowGallery from "./TrendingNowGallery";
-import WatchAgainGallery from "./WhatchAgainGallery";
-import NewReleasesGallery from "./NewReleasesGallery";
+// import TrendingNowGallery from "./TrendingNowGallery";
+// import WatchAgainGallery from "./WhatchAgainGallery";
+// import NewReleasesGallery from "./NewReleasesGallery";
+import GalleryRow from "./GalleryRow";
 
 function GalleryPage() {
   return (
@@ -40,7 +41,7 @@ function GalleryPage() {
         </div>
       </Container>
       <Container>
-        <h2 className="text-light fs-4 pt-4 pb-2" id="Trending">
+        {/* <h2 className="text-light fs-4 pt-4 pb-2" id="Trending">
           Trending Now
         </h2>
         <TrendingNowGallery />
@@ -52,6 +53,12 @@ function GalleryPage() {
           New Releases
         </h2>
         <NewReleasesGallery />
+        <h2 className="text-light fs-4 pt-4 pb-2" id="New-releases">
+          Experiment
+        </h2> */}
+        <GalleryRow movieSearch="Harry Potter" />
+        <GalleryRow movieSearch="One Piece" />
+        <GalleryRow movieSearch="Lord Of The Rings" />
       </Container>
     </Container>
   );

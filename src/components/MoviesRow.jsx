@@ -3,7 +3,7 @@ import { Row, Col } from "react-bootstrap";
 function MoviesRow(props) {
   console.log(props.movies);
   return (
-    <Row>
+    <Row className="g-1">
       {props.movies.slice(0, 6).map((movie) => (
         <Col xs={6} md={3} lg={2} key={movie.imdbID}>
           <div className="position-relative d-inline-block">

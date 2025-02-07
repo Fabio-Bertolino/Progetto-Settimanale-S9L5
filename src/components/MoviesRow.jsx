@@ -1,6 +1,6 @@
 import { Row, Col } from "react-bootstrap";
 
-function SingleMovie(props) {
+function MoviesRow(props) {
   console.log(props.movies);
   return (
     <Row>
@@ -17,4 +17,4 @@ function SingleMovie(props) {
   );
 }
 
-export default SingleMovie;
+export default MoviesRow;

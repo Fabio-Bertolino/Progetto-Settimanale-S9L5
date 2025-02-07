@@ -1,7 +1,7 @@
 import { Component } from "react";
 import MoviesRow from "./MoviesRow";
 
-class TrendingNowGallery extends Component {
+class NewReleasesGallery extends Component {
   state = {
     movies: [],
   };
@@ -9,7 +9,7 @@ class TrendingNowGallery extends Component {
   fetchMovies = async () => {
     try {
       console.log("fetching data...");
-      const resp = await fetch("http://www.omdbapi.com/?apikey=a56825d6&s=Harry");
+      const resp = await fetch("http://www.omdbapi.com/?apikey=a56825d6&s=Lord");
       if (resp.ok) {
         const moviesObj = await resp.json();
         console.log(moviesObj);
@@ -35,4 +35,4 @@ class TrendingNowGallery extends Component {
   }
 }
 
-export default TrendingNowGallery;
+export default NewReleasesGallery;

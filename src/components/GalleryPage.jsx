@@ -1,6 +1,8 @@
 import { Container, Dropdown, DropdownButton } from "react-bootstrap";
 import { List, Grid } from "react-bootstrap-icons";
 import TrendingNowGallery from "./TrendingNowGallery";
+import WatchAgainGallery from "./WhatchAgainGallery";
+import NewReleasesGallery from "./NewReleasesGallery";
 
 function GalleryPage() {
   return (
@@ -38,16 +40,18 @@ function GalleryPage() {
         </div>
       </Container>
       <Container>
-        <h2 className="text-light fs-4 py-2" id="Trending">
+        <h2 className="text-light fs-4 pt-4 pb-2" id="Trending">
           Trending Now
         </h2>
         <TrendingNowGallery />
-        <h2 className="text-light fs-4 py-2" id="Re-watch">
+        <h2 className="text-light fs-4 pt-4 pb-2" id="Re-watch">
           Watch It Again
         </h2>
-        <h2 className="text-light fs-4 py-2" id="New-releases">
+        <WatchAgainGallery />
+        <h2 className="text-light fs-4 pt-4 pb-2" id="New-releases">
           New Releases
         </h2>
+        <NewReleasesGallery />
       </Container>
     </Container>
   );

@@ -4,9 +4,13 @@ import MoviesRow from "./MoviesRow";
 class GalleryRow extends Component {
   state = {
     movies: [],
+    isLoading: false,
+    hasError: false,
+    errorMessage: "",
   };
 
   fetchMovies = async () => {
+    this.setState({ isLoading: true });
     try {
       console.log("fetching data...");
       const resp = await fetch("http://www.omdbapi.com/?apikey=a56825d6&s=" + this.props.movieSearch);
@@ -19,6 +23,9 @@ class GalleryRow extends Component {
       }
     } catch (error) {
       console.log(error);
+      this.setState({ hasError: true, errorMessage: error.message });
+    } finally {
+      this.setState({ isLoading: false });
     }
   };
 
@@ -32,7 +39,12 @@ class GalleryRow extends Component {
         <h2 className="text-light fs-4 pt-4 pb-2" id="New-releases">
           {this.props.movieSearch}
         </h2>
-        <MoviesRow movies={this.state.movies} />
+        <MoviesRow
+          movies={this.state.movies}
+          loading={this.state.isLoading}
+          error={this.state.hasError}
+          errorMsg={this.state.errorMessage}
+        />
       </div>
     );
   }
